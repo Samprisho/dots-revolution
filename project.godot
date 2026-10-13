@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Dots Revolution"
+run/main_scene="uid://bnue510njyihg"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
@@ -25,6 +26,14 @@ folder_colors={
 "res://scenes/": "orange",
 "res://scripts/": "yellow"
 }
+
+[layer_names]
+
+2d_physics/layer_1="World Geometry"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Dots"
+2d_physics/layer_4="Squares"
+2d_physics/layer_5="Puzzle Piece"
 
 [physics]
 
