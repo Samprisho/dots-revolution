@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://bm8chq73mvkx4"]
 
+[ext_resource type="Script" uid="uid://cht5eoh2lecg7" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="2_i3pqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(336, 0, 79, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwu45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": 1,
+"name": &"PlayerMoveDown",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"PlayerMoveLeft",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"PlayerMoveRight",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"PlayerMoveUp",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6g1ex"]
+radius = 34.234486
+
 [node name="Player" type="Area2D" unique_id=2111529812]
+position = Vector2(220, 119)
+script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=759700781]
+position = Vector2(7, 4)
+scale = Vector2(0.51, 0.5)
+sprite_frames = SubResource("SpriteFrames_lwu45")
+animation = &"PlayerMoveDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=400150586]
+position = Vector2(7, 3)
+shape = SubResource("CircleShape2D_6g1ex")
