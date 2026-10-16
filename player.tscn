@@ -33,20 +33,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6g1ex"]
-radius = 34.234486
-
 [node name="Player" type="Area2D" unique_id=2111529812]
-position = Vector2(220, 119)
+position = Vector2(136, 107)
 script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=759700781]
 position = Vector2(7, 4)
-scale = Vector2(0.51, 0.5)
+scale = Vector2(1.02, 1)
 sprite_frames = SubResource("SpriteFrames_lwu45")
 animation = &"PlayerMoveDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=400150586]
 position = Vector2(7, 3)
-shape = SubResource("CircleShape2D_6g1ex")
