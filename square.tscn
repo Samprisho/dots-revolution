@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://8cjpftwrsltq"]
+
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_2eeqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ex"]
+size = Vector2(184, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("1_2eeqm")
+region = Rect2(257, 0, 79, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvufb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5epwn"]
+atlas = ExtResource("1_2eeqm")
+region = Rect2(400, 390, 55, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5epwn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Square" type="CharacterBody2D" unique_id=361667307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849405406]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_6g1ex")
+
+[node name="SquareSkeleton" type="Node2D" parent="." unique_id=1501733187]
+
+[node name="Body" type="AnimatedSprite2D" parent="SquareSkeleton" unique_id=1681539513]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qvufb")
+
+[node name="Face" type="AnimatedSprite2D" parent="SquareSkeleton" unique_id=884331823]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_272bh")

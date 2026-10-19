@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ctnvxpiql1c40"]
+
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
+[ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
+radius = 91.13726
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("1_syhbm")
+region = Rect2(1, 148, 77, 78)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g1ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_o7bw8")
+region = Rect2(121, 1093, 93, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg1c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Dot" type="CharacterBody2D" unique_id=879685431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
+shape = SubResource("CircleShape2D_2hs0m")
+
+[node name="DotSkeleton" type="Node2D" parent="." unique_id=744449641]
+
+[node name="Body" type="AnimatedSprite2D" parent="DotSkeleton" unique_id=1925438646]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6g1ex")
+
+[node name="Face" type="AnimatedSprite2D" parent="DotSkeleton" unique_id=1684589045]
+sprite_frames = SubResource("SpriteFrames_lg1c5")
