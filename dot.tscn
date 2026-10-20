@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ctnvxpiql1c40"]
 
+[ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_o7bw8"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
 [ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
 
@@ -37,6 +38,10 @@ animations = [{
 }]
 
 [node name="Dot" type="CharacterBody2D" unique_id=879685431]
+motion_mode = 1
+platform_wall_layers = 1
+script = ExtResource("1_o7bw8")
+speed = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
 shape = SubResource("CircleShape2D_2hs0m")

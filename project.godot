@@ -16,8 +16,9 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
 
+window/size/viewport_height=640
+window/size/borderless=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [file_customization]
 
@@ -82,6 +83,7 @@ Dfluencedown={
 2d_physics/layer_3="Dots"
 2d_physics/layer_4="Squares"
 2d_physics/layer_5="Puzzle Piece"
+2d_physics/layer_6="Obstacles"
 
 [physics]
 
