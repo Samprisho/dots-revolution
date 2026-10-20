@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dkcxum0k1s3wt"]
+
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_v45kp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v45kp"]
+radius = 55.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdhqa"]
+atlas = ExtResource("1_v45kp")
+region = Rect2(160, 81, 79, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg1c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdhqa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4yn7"]
+atlas = ExtResource("1_v45kp")
+region = Rect2(81, 227, 78, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g1ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4yn7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpikeySquare" type="CharacterBody2D" unique_id=586206777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1512702896]
+shape = SubResource("CircleShape2D_v45kp")
+
+[node name="SpikeySquareSkeleton" type="Node2D" parent="." unique_id=808034094]
+
+[node name="Body1" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=1957746868]
+sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="Body2" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=814034187]
+rotation = 0.34906584
+sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="Body3" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=759521815]
+rotation = 0.6981317
+sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="Body4" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=289874564]
+rotation = 1.0471976
+sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="Body5" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=1080017917]
+rotation = 1.3962634
+sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="Body6" type="AnimatedSprite2D" parent="SpikeySquareSkeleton" unique_id=1208923202]
+rotation = 0.61086524
+sprite_frames = SubResource("SpriteFrames_6g1ex")
