@@ -1,3 +1,4 @@
+# CODE AUTHORED BY Samprisho MIT LISCENSE
 extends Node
 class_name GoalCondition
 

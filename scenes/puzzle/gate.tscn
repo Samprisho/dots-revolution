@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce348jgr3jxkj"]
+
+[ext_resource type="Script" uid="uid://cciefsm1xi1kt" path="res://scripts/puzzle/gate.gd" id="1_gy08a"]
+[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="2_gy08a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7onm5"]
+
+[node name="Gate" type="Node2D" unique_id=173326647]
+script = ExtResource("1_gy08a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015903794]
+texture = ExtResource("2_gy08a")
+region_enabled = true
+region_rect = Rect2(51, 102, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1699792230]
+collision_layer = 17
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=982119412]
+shape = SubResource("RectangleShape2D_7onm5")

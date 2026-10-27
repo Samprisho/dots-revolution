@@ -1,5 +1,6 @@
+# COPYRIGHT Samprisho LISCENSE MIT
 extends Node
-class_name PropActivator
+class_name Goal
 
 ## This class can be extended by nodes that need to interact with any 
 ## goal condition. [br]
@@ -22,6 +23,7 @@ signal individual_condition_change(state: bool, condition: GoalCondition)
 
 ## Fires when all GoalConditions are fulfilled
 signal prop_activate
+
 ## Fires when a GoalCondition becomes unfulfilled, meaning that the conditions
 ## This prop should deactivate
 signal prop_deactivate
@@ -56,8 +58,6 @@ func _evaluate_conditions() -> bool:
 		if not condition.fulfilled:
 			result = false
 			break
-	
-	print("evaluating", result)
 	
 	return result
 
