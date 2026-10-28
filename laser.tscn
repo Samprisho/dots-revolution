@@ -5,11 +5,11 @@ size = Vector2(63, 646)
 
 [node name="RayCast2D" type="RayCast2D" unique_id=1754136155]
 position = Vector2(330, 268)
-target_position = Vector2(824, 0)
+target_position = Vector2(633, 0)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=834879658]
-position = Vector2(-4.8174005, 2)
-scale = Vector2(0.41825897, 1)
+position = Vector2(-6.537145, 2)
+scale = Vector2(0.24628451, 1)
 points = PackedVector2Array(0, -3, 451, -3)
 default_color = Color(0.053802356, 0.70758826, 0.70439845, 1)
 
