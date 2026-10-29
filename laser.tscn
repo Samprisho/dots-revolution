@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgxec1bd3ugpu"]
 
+[ext_resource type="Script" uid="uid://ds2bmiu5ca671" path="res://laser.gd" id="1_6vqwg"]
 [ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="1_fn5yt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v4xrj"]
@@ -14,22 +15,40 @@ hue_variation_min = -1.0
 hue_variation_max = 0.99999994
 
 [node name="RayCast2D" type="RayCast2D" unique_id=1754136155]
-target_position = Vector2(2000, 0)
+target_position = Vector2(1500, 0)
+collide_with_areas = true
+script = ExtResource("1_6vqwg")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=834879658]
-z_index = 5
+top_level = true
+position = Vector2(-0.8403361, 0)
+scale = Vector2(0.789916, 1)
 points = PackedVector2Array(0, 0, 1896, 0)
 width = 4.0
-default_color = Color(0.053802356, 0.70758826, 0.70439845, 1)
+default_color = Color(0.20392157, 1, 1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722494608]
-scale = Vector2(5.9375, 5.5625)
+[node name="LaserShootBlock" type="Sprite2D" parent="." unique_id=1722494608]
+scale = Vector2(6, 5.621)
 texture = ExtResource("1_fn5yt")
 region_enabled = true
 region_rect = Rect2(88, 139, 10, 10)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=250374595]
+position = Vector2(1500, 0)
 amount = 32
-lifetime = 0.4
+lifetime = 4.0
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_v4xrj")
+
+[node name="LaserRecieveBlock" type="Sprite2D" parent="." unique_id=39621142]
+position = Vector2(1530, 2)
+scale = Vector2(4, 4)
+texture = ExtResource("1_fn5yt")
+region_enabled = true
+region_rect = Rect2(186, 68, 16, 16)
+
+[node name="CycleTimer" type="Timer" parent="." unique_id=383822850]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="CycleTimer" to="." method="_on_cycle_timer_timeout"]
