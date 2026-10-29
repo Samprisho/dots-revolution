@@ -1,20 +1,31 @@
 extends RayCast2D
 
-@export var beam_length: float = 500.0
+@export var beam_length: float = 2000.0
 @export var beam_color: Color = Color.RED
 @export var is_casting: bool
 @onready var beam_line: Line2D = %Line2D
+@onready var line_2d: Line2D = $Line2d
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
-func _physics_process(delta):
-	force_raycast_update()
+func _ready() -> void:
+	enabled = true
+	
+	while line_2d.get_point_count() < 2:
+		line_2d.add_point(Vector2.ZERO)
+	
+	line_2d.set_point_position(0, Vector2.ZERO)
+	line_2d.set_point_position(1, Vector2.ZERO)
+
+func _physics_process(_delta: float):
+	target_position = Vector2(beam_length,0)
+	
 	if is_colliding():
-		var hit_point = to_local(get_collision_point())
-		beam_line.points[1] = hit_point
+		var local_collision_point: Vector2 = to_local(get_collision_point())
+		line_2d.set_point_position(0, Vector2.ZERO)
+		line_2d.set_point_position(1, local_collision_point)
+		gpu_particles_2d.position = local_collision_point
+		gpu_particles_2d.emitting = true
 	else:
-		beam_line.points[1] = Vector2(0, beam_length)
-
-	# Optional: animate beam length for “firing” effect
-	if is_casting:
-		beam_line.visible = true
-	else:
-		beam_line.visible = false
+		line_2d.set_point_position(0, Vector2.ZERO)
+		line_2d.set_point_position(1, target_position)
+		gpu_particles_2d.emitting = false
