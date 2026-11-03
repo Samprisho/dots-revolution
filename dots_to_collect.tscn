@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://6dasfaqkqt7"]
 
+[ext_resource type="Script" uid="uid://dkchpjfrg7i26" path="res://dots_to_collect.gd" id="1_ls3at"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_xdf3e"]
 
-[node name="dotsToCollect" type="Node2D" unique_id=1837666423]
+[node name="dotsToCollect" type="CharacterBody2D" unique_id=1480575871]
+top_level = true
+script = ExtResource("1_ls3at")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=168878317]
 texture = ExtResource("1_xdf3e")

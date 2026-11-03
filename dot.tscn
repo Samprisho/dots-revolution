@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_o7bw8"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
 [ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
-[ext_resource type="PackedScene" uid="uid://6dasfaqkqt7" path="res://dots_to_collect.tscn" id="4_ippvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 91.13726
@@ -39,6 +38,7 @@ animations = [{
 }]
 
 [node name="Dot" type="CharacterBody2D" unique_id=879685431]
+z_index = 1
 collision_layer = 2
 motion_mode = 1
 platform_wall_layers = 1
@@ -48,20 +48,21 @@ speed = 300.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
 shape = SubResource("CircleShape2D_2hs0m")
 
-[node name="DotSkeleton" type="Node2D" parent="." unique_id=744449641]
-
-[node name="Body" type="AnimatedSprite2D" parent="DotSkeleton" unique_id=1925438646]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_6g1ex")
-
-[node name="Face" type="AnimatedSprite2D" parent="DotSkeleton" unique_id=1684589045]
-sprite_frames = SubResource("SpriteFrames_lg1c5")
-
 [node name="dotContainer" type="Node2D" parent="." unique_id=2035901566]
 unique_name_in_owner = true
 
-[node name="dotTarget" type="Marker2D" parent="." unique_id=1412965344]
+[node name="rotationNode" type="Node2D" parent="." unique_id=644685901]
 unique_name_in_owner = true
 
-[node name="dotsToCollect" parent="dotTarget" unique_id=1837666423 instance=ExtResource("4_ippvd")]
-position = Vector2(109, 72)
+[node name="dotTarget" type="Marker2D" parent="rotationNode" unique_id=1412965344]
+unique_name_in_owner = true
+position = Vector2(64, 55)
+
+[node name="DotSkeleton" type="Node2D" parent="rotationNode" unique_id=744449641]
+
+[node name="Body" type="AnimatedSprite2D" parent="rotationNode/DotSkeleton" unique_id=1925438646]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6g1ex")
+
+[node name="Face" type="AnimatedSprite2D" parent="rotationNode/DotSkeleton" unique_id=1684589045]
+sprite_frames = SubResource("SpriteFrames_lg1c5")
