@@ -2,9 +2,16 @@ extends CharacterBody2D
 
 @export var speed = 250.0
 @export var break_power = 100000
+var player_vol = Vector2(1,1)
+var old_player_pos
 
+func _ready() -> void:
+	old_player_pos = global_position
 
-
+func _process(delta):
+	player_vol = global_position - old_player_pos
+	old_player_pos = global_position
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	

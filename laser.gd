@@ -10,7 +10,8 @@ extends RayCast2D
 func _ready() -> void:
 	enabled = true
 	is_casting = false
-	$CycleTimer.start()
+	$CycleTimer.start(2.0)  # Start with laser ON for 2 seconds
+	#turn_laser_on()
 	
 	while line_2d.get_point_count() < 2:
 		line_2d.add_point(Vector2.ZERO)
@@ -32,5 +33,19 @@ func _physics_process(_delta: float):
 		line_2d.set_point_position(0, target_position)
 		gpu_particles_2d.emitting = false
 
-func _on_cycle_timer_timeout() -> void:
-	is_casting = true
+
+func _on_CycleTimer_timeout():
+	if is_casting == true:
+		#turn_laser_off()
+		#laser_on = false
+		$CycleTimer.start(4.0)  # OFF for 4 seconds
+	else:
+		#turn_laser_on()
+		#laser_on = true
+		$CycleTimer.start(2.0)  # ON for 2 seconds
+
+func turn_laser_on():
+	$Laser.visible = true
+
+func turn_laser_off():
+	$Laser.visible = false

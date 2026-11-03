@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://wlaepoqa65af"]
+
+[ext_resource type="Script" uid="uid://c282k8u5nkkmv" path="res://enemy_sniper.gd" id="1_ji16v"]
+[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="2_3f205"]
+
+[node name="Enemy_Sniper" type="Node2D" unique_id=1800411160]
+script = ExtResource("1_ji16v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1384097342]
+modulate = Color(0.19607843, 1, 0.44705883, 1)
+scale = Vector2(7.382353, 7.7352943)
+texture = ExtResource("2_3f205")
+region_enabled = true
+region_rect = Rect2(15.963036, 154, 17.240997, 16)
+
+[node name="Timer" type="Timer" parent="." unique_id=15111213]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
