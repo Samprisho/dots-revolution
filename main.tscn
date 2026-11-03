@@ -9,25 +9,7 @@ metadata/_edit_group_ = true
 
 [node name="Dot" parent="." unique_id=879685431 instance=ExtResource("2_lquwl")]
 
-[node name="dotsToCollect" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="0" unique_id=1480575871 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect2" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="1" unique_id=1031842874 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect3" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="2" unique_id=776792146 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect4" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="3" unique_id=386182747 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect5" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="4" unique_id=673670076 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect6" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="5" unique_id=1620083010 instance=ExtResource("2_h2yge")]
-position = Vector2(107, 73)
-
-[node name="dotsToCollect7" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="6" unique_id=790862051 instance=ExtResource("2_h2yge")]
+[node name="dotsToCollect7" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="0" unique_id=790862051 instance=ExtResource("2_h2yge")]
 position = Vector2(107, 73)
 
 [node name="Square" parent="." unique_id=361667307 instance=ExtResource("3_h2yge")]

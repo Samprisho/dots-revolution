@@ -46,5 +46,7 @@ func _physics_process(delta: float) -> void:
 		velocity = movement
 	else:
 		velocity = Vector2.ZERO
+	
+	print("dot vel ", velocity.length())
 
 	move_and_slide()

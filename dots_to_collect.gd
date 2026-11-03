@@ -9,7 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	await get_tree().process_frame
 	var dot = get_tree().get_first_node_in_group("dot")
 	var dots = get_tree().get_nodes_in_group("dots")
 	
@@ -28,12 +27,18 @@ func _physics_process(delta: float) -> void:
 			speed = dot.speed
 		if dot.velocity == Vector2.ZERO and lastDotOnFloor:
 			speed -= 5
-		if not dot.is_on_floor():
-			distanceBetween = 15
+		
+		
+		#if not dot.is_on_floor():
+			#distanceBetween = 15
+		#
+		
 		if global_position.distance_to(targetPos) > distanceBetween:
 			velocity = direction * speed
 		else:
 			velocity = Vector2.ZERO
+		
+		print("dots vel ", velocity.length())
 			
 		_dot_animation()
 		
