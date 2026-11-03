@@ -9,6 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	await get_tree().process_frame
 	var dot = get_tree().get_first_node_in_group("dot")
 	var dots = get_tree().get_nodes_in_group("dots")
 	

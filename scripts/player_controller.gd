@@ -6,9 +6,11 @@ extends CharacterBody2D
 @export var speed = 250.0
 @export var break_power = 100000
 
+@onready var dot_marker = %dotTarget
 var player_vol = Vector2(1,1)
 var old_player_pos
 
+const MAX_SPEED = 5000
 
 func _ready() -> void:
 	add_to_group("player")

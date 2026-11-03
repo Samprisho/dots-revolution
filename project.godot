@@ -28,6 +28,11 @@ folder_colors={
 "res://scripts/": "yellow"
 }
 
+[global_group]
+
+dot=""
+dots="Following dots"
+
 [input]
 
 playerUp={

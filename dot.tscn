@@ -37,7 +37,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Dot" type="CharacterBody2D" unique_id=879685431]
+[node name="Dot" type="CharacterBody2D" unique_id=879685431 groups=["dot"]]
 z_index = 1
 collision_layer = 2
 motion_mode = 1
