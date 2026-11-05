@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyn4xcuy0bi7x"]
+
+[ext_resource type="Script" uid="uid://r6p7ma506eb7" path="res://scripts/collectible_dot.gd" id="1_l53hh"]
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_sh6gk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l53hh"]
+radius = 43.081318
+
+[node name="Collectible dot" type="Area2D" unique_id=1009933491 groups=["collectible"]]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_l53hh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=426764806]
+texture = ExtResource("1_sh6gk")
+region_enabled = true
+region_rect = Rect2(0, 149, 77.400024, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378944170]
+shape = SubResource("CircleShape2D_l53hh")

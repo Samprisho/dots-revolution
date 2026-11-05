@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		and dots[-1].global_position.y > dotFloorPos.y - 10)
 		
 	if not lastDotOnFloor or dot.velocity or speed > 0:
-		var distanceBetween = lerp(10,30,abs(dot.velocity.x) / dot.MAX_SPEED)
+		var distanceBetween = lerp(10,200,abs(dot.velocity.x) / dot.speed)
 		var targetPos = _get_target_position(dots, dot)
 		var direction = (targetPos - global_position).normalized()
 		
@@ -28,17 +28,15 @@ func _physics_process(delta: float) -> void:
 		if dot.velocity == Vector2.ZERO and lastDotOnFloor:
 			speed -= 5
 		
+		if not dot.is_on_floor():
+			distanceBetween = 90
 		
-		#if not dot.is_on_floor():
-			#distanceBetween = 15
-		#
 		
 		if global_position.distance_to(targetPos) > distanceBetween:
 			velocity = direction * speed
 		else:
 			velocity = Vector2.ZERO
-		
-		print("dots vel ", velocity.length())
+	
 			
 		_dot_animation()
 		
@@ -59,8 +57,8 @@ func _dot_animation():
 	
 	var startPos = $Sprite2D.position
 	var tween = create_tween()
-	tween.tween_property($Sprite2D, "position", $Sprite2D.position + Vector2(0,-1), 0.2)
-	tween.tween_property($Sprite2D, "position", startPos, 0.1)
+	tween.tween_property($Sprite2D, "position", $Sprite2D.position + Vector2(0,-5), 0.2)
+	tween.tween_property($Sprite2D, "position", startPos, 0.3)
 	await tween.finished
 	
 	onTween = false

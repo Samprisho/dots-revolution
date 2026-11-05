@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7onm5"]
 
 [node name="Gate" type="Node2D" unique_id=173326647]
+scale = Vector2(2.605, 2.605)
 script = ExtResource("1_gy08a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015903794]

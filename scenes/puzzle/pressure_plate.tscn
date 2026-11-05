@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://balc5iux0skt2" path="res://scripts/puzzle/pressure_plate.gd" id="1_nctkn"]
 [ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="2_xso8x"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_xso8x"]
+font_size = 89
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7onm5"]
+size = Vector2(82, 86)
 
 [node name="Pressure Plate" type="Node2D" unique_id=297112996]
 script = ExtResource("1_nctkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1485991160]
-scale = Vector2(1.4, 1.4)
+scale = Vector2(6.945, 6.945)
 texture = ExtResource("2_xso8x")
 region_enabled = true
 region_rect = Rect2(0, 85, 16, 16)
@@ -20,13 +24,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.175
-offset_right = 20.0
-offset_bottom = -11.174999
+offset_left = -138.0
+offset_top = -211.0
+offset_right = 139.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1/5"
+text = "0 / 5"
+label_settings = SubResource("LabelSettings_xso8x")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -12,6 +12,21 @@ metadata/_edit_group_ = true
 [node name="dotsToCollect7" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="0" unique_id=790862051 instance=ExtResource("2_h2yge")]
 position = Vector2(107, 73)
 
+[node name="dotsToCollect8" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="1" unique_id=1480575871 instance=ExtResource("2_h2yge")]
+position = Vector2(107, 73)
+
+[node name="dotsToCollect9" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="2" unique_id=627241823 instance=ExtResource("2_h2yge")]
+position = Vector2(107, 73)
+
+[node name="dotsToCollect10" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="3" unique_id=1350793766 instance=ExtResource("2_h2yge")]
+position = Vector2(107, 73)
+
+[node name="dotsToCollect11" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="4" unique_id=687790476 instance=ExtResource("2_h2yge")]
+position = Vector2(107, 73)
+
+[node name="dotsToCollect12" parent="Dot/dotContainer" parent_id_path=PackedInt32Array(879685431, 2035901566) index="5" unique_id=316722814 instance=ExtResource("2_h2yge")]
+position = Vector2(107, 73)
+
 [node name="Square" parent="." unique_id=361667307 instance=ExtResource("3_h2yge")]
 position = Vector2(300, 0)
 

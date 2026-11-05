@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_o7bw8"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
 [ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
+[ext_resource type="Script" uid="uid://d2f7lcvvqy1nv" path="res://scripts/dot_collector.gd" id="4_ippvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 91.13726
@@ -37,13 +38,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7onm5"]
+radius = 214.23352
+
 [node name="Dot" type="CharacterBody2D" unique_id=879685431 groups=["dot"]]
 z_index = 1
 collision_layer = 2
 motion_mode = 1
 platform_wall_layers = 1
 script = ExtResource("1_o7bw8")
-speed = 300.0
+speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
 shape = SubResource("CircleShape2D_2hs0m")
@@ -66,3 +70,11 @@ sprite_frames = SubResource("SpriteFrames_6g1ex")
 
 [node name="Face" type="AnimatedSprite2D" parent="rotationNode/DotSkeleton" unique_id=1684589045]
 sprite_frames = SubResource("SpriteFrames_lg1c5")
+
+[node name="DotCollector" type="Area2D" parent="." unique_id=1317128543]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("4_ippvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DotCollector" unique_id=1470720572]
+shape = SubResource("CircleShape2D_7onm5")

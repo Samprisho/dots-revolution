@@ -3,14 +3,15 @@ extends RayCast2D
 @export var beam_length: float = 2000.0
 @export var beam_color: Color = Color.RED
 @export var is_casting: bool
-@onready var beam_line: Line2D = %Line2D
-@onready var line_2d: Line2D = $Line2d
+@onready var line_2d: Line2D = $Line2D
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 func _ready() -> void:
 	enabled = true
 	is_casting = false
 	$CycleTimer.start(2.0)  # Start with laser ON for 2 seconds
+	$CycleTimer.timeout.connect(_on_CycleTimer_timeout)
+	$CycleTimer.one_shot = false
 	#turn_laser_on()
 	
 	while line_2d.get_point_count() < 2:
@@ -22,6 +23,7 @@ func _ready() -> void:
 func _physics_process(_delta: float):
 	target_position = Vector2(beam_length,0)
 	
+	
 	if is_colliding():
 		var local_collision_point: Vector2 = to_local(get_collision_point())
 		line_2d.set_point_position(0, Vector2.ZERO)
@@ -32,20 +34,26 @@ func _physics_process(_delta: float):
 		line_2d.set_point_position(0, Vector2.ZERO)
 		line_2d.set_point_position(0, target_position)
 		gpu_particles_2d.emitting = false
+	
+	
 
 
 func _on_CycleTimer_timeout():
+	print("timeout: ", is_casting)
 	if is_casting == true:
-		#turn_laser_off()
+		turn_laser_off()
 		#laser_on = false
 		$CycleTimer.start(4.0)  # OFF for 4 seconds
 	else:
-		#turn_laser_on()
+		turn_laser_on()
 		#laser_on = true
 		$CycleTimer.start(2.0)  # ON for 2 seconds
+	is_casting = not is_casting
 
 func turn_laser_on():
-	$Laser.visible = true
+	line_2d.show()
+	gpu_particles_2d.show()
 
 func turn_laser_off():
-	$Laser.visible = false
+	line_2d.hide()
+	gpu_particles_2d.hide()
