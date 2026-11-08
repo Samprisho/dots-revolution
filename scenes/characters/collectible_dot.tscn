@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_sh6gk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l53hh"]
-radius = 43.081318
+radius = 32.0
 
 [node name="Collectible dot" type="Area2D" unique_id=1009933491 groups=["collectible"]]
 collision_layer = 4

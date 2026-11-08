@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_o7bw8"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
+[ext_resource type="Script" uid="uid://8ce7xqkcb8cl" path="res://scripts/dot_target.gd" id="2_h78yx"]
 [ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
+[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="3_1mrrf"]
 [ext_resource type="Script" uid="uid://d2f7lcvvqy1nv" path="res://scripts/dot_collector.gd" id="4_ippvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
@@ -39,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7onm5"]
-radius = 214.23352
+radius = 124.036285
 
 [node name="Dot" type="CharacterBody2D" unique_id=879685431 groups=["dot"]]
 z_index = 1
@@ -58,9 +60,16 @@ unique_name_in_owner = true
 [node name="rotationNode" type="Node2D" parent="." unique_id=644685901]
 unique_name_in_owner = true
 
-[node name="dotTarget" type="Marker2D" parent="rotationNode" unique_id=1412965344]
+[node name="dotTarget" type="Marker2D" parent="rotationNode" unique_id=1412965344 node_paths=PackedStringArray("dot")]
 unique_name_in_owner = true
-position = Vector2(64, 55)
+script = ExtResource("2_h78yx")
+dot = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="rotationNode/dotTarget" unique_id=1293991029]
+scale = Vector2(5.27, 5.27)
+texture = ExtResource("3_1mrrf")
+region_enabled = true
+region_rect = Rect2(0, 85, 16, 16)
 
 [node name="DotSkeleton" type="Node2D" parent="rotationNode" unique_id=744449641]
 
@@ -77,4 +86,5 @@ collision_mask = 4
 script = ExtResource("4_ippvd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DotCollector" unique_id=1470720572]
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_7onm5")

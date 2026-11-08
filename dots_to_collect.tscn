@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_xdf3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7onm5"]
-radius = 43.081318
+radius = 24.0
 
 [node name="dotsToCollect" type="CharacterBody2D" unique_id=1480575871 groups=["dots"]]
 top_level = true

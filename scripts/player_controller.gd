@@ -23,6 +23,7 @@ func _set_animation(direction):
 func _process(delta):
 	player_vol = global_position - old_player_pos
 	old_player_pos = global_position
+
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

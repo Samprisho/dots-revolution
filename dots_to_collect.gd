@@ -2,13 +2,17 @@ extends CharacterBody2D
 
 var speed = 0.0
 var onTween = false
+var stay = false
 
 func _ready() -> void:
 	add_to_group("dots")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
+	if stay:
+		return
+	
 	var dot = get_tree().get_first_node_in_group("dot")
 	var dots = get_tree().get_nodes_in_group("dots")
 	
