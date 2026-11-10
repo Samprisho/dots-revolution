@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8cjpftwrsltq"]
 
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_2eeqm"]
+[ext_resource type="Script" uid="uid://cpd2b0t21hped" path="res://square.gd" id="1_5epwn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ex"]
 size = Vector2(184, 181)
@@ -36,6 +37,7 @@ animations = [{
 }]
 
 [node name="Square" type="CharacterBody2D" unique_id=361667307]
+script = ExtResource("1_5epwn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849405406]
 position = Vector2(-1, 0.5)

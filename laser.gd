@@ -12,7 +12,7 @@ func _ready() -> void:
 	$CycleTimer.start(2.0)  # Start with laser ON for 2 seconds
 	$CycleTimer.timeout.connect(_on_CycleTimer_timeout)
 	$CycleTimer.one_shot = false
-	#turn_laser_on()
+	
 	
 	while line_2d.get_point_count() < 2:
 		line_2d.add_point(Vector2.ZERO)
@@ -30,6 +30,11 @@ func _physics_process(_delta: float):
 		line_2d.set_point_position(0, local_collision_point)
 		gpu_particles_2d.position = local_collision_point
 		gpu_particles_2d.emitting = true
+		if local_collision_point == $dot.global_position:
+			game_over()
+		if local_collision_point == $dots_to_collect.global_position:
+			pass
+			
 	else:
 		line_2d.set_point_position(0, Vector2.ZERO)
 		line_2d.set_point_position(0, target_position)
@@ -39,21 +44,22 @@ func _physics_process(_delta: float):
 
 
 func _on_CycleTimer_timeout():
-	print("timeout: ", is_casting)
 	if is_casting == true:
 		turn_laser_off()
-		#laser_on = false
 		$CycleTimer.start(4.0)  # OFF for 4 seconds
 	else:
 		turn_laser_on()
-		#laser_on = true
 		$CycleTimer.start(2.0)  # ON for 2 seconds
 	is_casting = not is_casting
 
 func turn_laser_on():
 	line_2d.show()
 	gpu_particles_2d.show()
+		
 
 func turn_laser_off():
 	line_2d.hide()
 	gpu_particles_2d.hide()
+
+func game_over():
+	pass
