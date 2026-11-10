@@ -4,11 +4,26 @@ var speed = 0.0
 var onTween = false
 var stay = false
 
+var collectible_scene = preload("res://scenes/characters/collectible_dot.tscn")
+
 func _ready() -> void:
 	add_to_group("dots")
 
+func _bye():
+	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("dropDots"):
+		if get_index() == 0:
+			var newColl: Node2D = collectible_scene.instantiate()
+			newColl.global_position = global_position
+			get_tree().current_scene.add_child(newColl)
+			call_deferred("_bye")
+			
+
+
 func _physics_process(delta: float) -> void:	
 	if stay:
 		return

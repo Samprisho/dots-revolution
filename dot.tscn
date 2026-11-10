@@ -64,6 +64,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("2_h78yx")
 dot = NodePath("../..")
+sensitivity = 780.0
 
 [node name="Sprite2D" type="Sprite2D" parent="rotationNode/dotTarget" unique_id=1293991029]
 scale = Vector2(5.27, 5.27)

@@ -47,7 +47,7 @@ position = Vector2(-216, 96)
 position = Vector2(888, -296)
 
 [node name="Collectible dot3" parent="." unique_id=280586471 instance=ExtResource("5_48ne7")]
-position = Vector2(560, -200)
+position = Vector2(136, -392)
 
 [node name="Collectible dot4" parent="." unique_id=588049412 instance=ExtResource("5_48ne7")]
 position = Vector2(472, 592)

@@ -15,16 +15,33 @@ var dots_on_plate: int = 0
 func _ready() -> void:
 	area_2d.body_entered.connect(_scan_bodies)
 	area_2d.body_exited.connect(_scan_bodies)
+	area_2d.area_entered.connect(_on_area)
 	_process_text()
+	
+	if not Engine.is_editor_hint():
+		_manual_scan()
+		
+		if dots_on_plate >= required_dots:
+			complete()
+		else:
+			revert()
 
+func _manual_scan():
+	_on_area()
 
-func _scan_bodies(new_body: Node2D) -> void:
+func _on_area(_object = null):
+	_scan_bodies()
+
+func _scan_bodies(_object = null) -> void:
 	if not area_2d or not label:
 		return
 	
 	dots_on_plate = 0
 	
 	for body in area_2d.get_overlapping_bodies():
+		dots_on_plate += 1
+	
+	for area in area_2d.get_overlapping_areas():
 		dots_on_plate += 1
 	
 	if dots_on_plate >= required_dots:

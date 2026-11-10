@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("Dfluenceup", "Dfluencedown")
 	).normalized()
 	
-	position += ( input * (sensitivity + dot.velocity.length() * 0.1 ) )  * delta
+	position += ( input * (sensitivity + dot.velocity.length() * 0.2 ) )  * delta
 	
 	if position.length() > range:
 		position = position.normalized() * range
