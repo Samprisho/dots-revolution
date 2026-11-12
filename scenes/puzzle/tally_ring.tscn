@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b5xk0y5oyhr1r"]
+
+[ext_resource type="Script" uid="uid://c0sxxvejcnx6m" path="res://scripts/puzzle/tally_ring.gd" id="1_i7jv7"]
+[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="2_6xhj2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6xhj2"]
+font_size = 89
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7onm5"]
+radius = 64.49806
+
+[node name="TallyRing" type="Node2D" unique_id=1747102908]
+script = ExtResource("1_i7jv7")
+time_between_tally = 0.35
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1928645150]
+scale = Vector2(8, 8)
+texture = ExtResource("2_6xhj2")
+region_enabled = true
+region_rect = Rect2(17, 85, 16, 16)
+
+[node name="Label" type="Label" parent="." unique_id=879064876]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -211.0
+offset_right = 139.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 3"
+label_settings = SubResource("LabelSettings_6xhj2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=197658801]
+collision_layer = 16
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=811086532]
+shape = SubResource("CircleShape2D_7onm5")

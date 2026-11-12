@@ -24,7 +24,7 @@ func _ready() -> void:
 		if dots_on_plate >= required_dots:
 			complete()
 		else:
-			revert()
+			incomplete()
 
 func _manual_scan():
 	_on_area()
@@ -47,7 +47,7 @@ func _scan_bodies(_object = null) -> void:
 	if dots_on_plate >= required_dots:
 		complete()
 	else:
-		revert()
+		incomplete()
 	
 	_process_text()
 

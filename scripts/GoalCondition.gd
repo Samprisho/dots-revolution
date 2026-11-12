@@ -34,7 +34,7 @@ func complete():
 
 ## Should be called by extending class to mark goal condition as unfulfilled and
 ## notify any connected [PropActivator]s
-func revert():
+func incomplete():
 	fulfilled = false
 	condition_reverted.emit()
 	condition_changed.emit(fulfilled, self)

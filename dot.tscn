@@ -49,7 +49,7 @@ collision_layer = 2
 motion_mode = 1
 platform_wall_layers = 1
 script = ExtResource("1_o7bw8")
-speed = 500.0
+speed = 700.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
 shape = SubResource("CircleShape2D_2hs0m")
