@@ -6,8 +6,11 @@ var stay = false
 
 var collectible_scene = preload("res://scenes/characters/collectible_dot.tscn")
 
+var dot
+
 func _ready() -> void:
 	add_to_group("dots")
+	dot = get_tree().get_first_node_in_group("dot")
 
 func _bye():
 	queue_free()
@@ -20,6 +23,10 @@ func _input(event: InputEvent) -> void:
 			var newColl: Node2D = collectible_scene.instantiate()
 			newColl.global_position = global_position
 			get_tree().current_scene.add_child(newColl)
+			
+			var tween = newColl.create_tween()
+			tween.tween_property(newColl, "global_position", dot.dot_marker.global_position, 0.3).set_trans(Tween.TRANS_LINEAR)
+			
 			call_deferred("_bye")
 			
 
@@ -28,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	if stay:
 		return
 	
-	var dot = get_tree().get_first_node_in_group("dot")
+
 	var dots = get_tree().get_nodes_in_group("dots")
 	
 	var dotFloorPos = dot.global_position + Vector2(0,20)

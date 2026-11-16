@@ -30,10 +30,13 @@ func _physics_process(_delta: float):
 		line_2d.set_point_position(0, local_collision_point)
 		gpu_particles_2d.position = local_collision_point
 		gpu_particles_2d.emitting = true
-		if local_collision_point == $dot.global_position:
+		
+		var dot = get_tree().get_first_node_in_group("dot")
+		
+		if local_collision_point == dot.global_position:
 			game_over()
-		if local_collision_point == $dots_to_collect.global_position:
-			pass
+		#if local_collision_point == $dots_to_collect.global_position:
+			#pass
 			
 	else:
 		line_2d.set_point_position(0, Vector2.ZERO)

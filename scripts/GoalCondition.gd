@@ -17,6 +17,7 @@ signal condition_reverted
 signal condition_changed(state: bool, condition: GoalCondition)
 
 var fulfilled: bool = false
+@export var stay_fulffilled: bool = false
 
 # Add more condition types as development continues
 enum EConditionType {
@@ -35,6 +36,10 @@ func complete():
 ## Should be called by extending class to mark goal condition as unfulfilled and
 ## notify any connected [PropActivator]s
 func incomplete():
+	if fulfilled:
+		if stay_fulffilled:
+			return
+	
 	fulfilled = false
 	condition_reverted.emit()
 	condition_changed.emit(fulfilled, self)

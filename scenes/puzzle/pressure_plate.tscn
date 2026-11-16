@@ -7,7 +7,7 @@
 font_size = 89
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7onm5"]
-size = Vector2(82, 86)
+size = Vector2(100, 100)
 
 [node name="Pressure Plate" type="Node2D" unique_id=297112996]
 script = ExtResource("1_nctkn")
@@ -19,6 +19,7 @@ region_enabled = true
 region_rect = Rect2(0, 85, 16, 16)
 
 [node name="Label" type="Label" parent="." unique_id=1080281283]
+z_index = 37
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

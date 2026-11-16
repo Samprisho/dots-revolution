@@ -9,8 +9,12 @@ extends GoalCondition
 		
 @onready var label:	Label = $Label
 @onready var area_2d: Area2D = $Area2D
+@onready var timer: Timer = $Timer
 
-var dots_passed: int = 0
+var dots_passed: int = 0:
+	set(new):
+		dots_passed = new
+		_process_text()
 var lastPass: int = Time.get_ticks_msec()
 
 
@@ -19,22 +23,22 @@ func _ready() -> void:
 	area_2d.body_entered.connect(_passed)
 	Time.get_ticks_msec()
 	_process_text()
+	
+	timer.timeout.connect(
+		func():
+			if not fulfilled:
+				dots_passed = 0
+	)
 
 func _passed(_body):
 	print("passed ", Time.get_ticks_msec(), " vs ", lastPass)
 	
-	if Time.get_ticks_msec() - lastPass > time_between_tally * 1000:
-		if dots_passed > 0:
-			dots_passed = 0
-		else:
-			dots_passed = 1
-		incomplete()
-	else:
+	if Time.get_ticks_msec() - lastPass < time_between_tally * 1000 or dots_passed == 0:
 		dots_passed += 1
 		if dots_passed >= required_dots:
 			complete()
 	
-	_process_text()
+	timer.start()
 	lastPass = Time.get_ticks_msec()
 
 func _process_text():

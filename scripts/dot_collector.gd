@@ -11,7 +11,11 @@ func _ready() -> void:
 	area_entered.connect(
 		func(area: Area2D):
 			if area.is_in_group("collectible"):
-				print("area")
+				
+				var timer: Timer = area.timer
+				if not timer.is_stopped():
+					return
+			
 				var new: Node2D = dot_scene.instantiate()
 				var plr = get_tree().get_first_node_in_group("dot")
 				new.global_position = area.global_position

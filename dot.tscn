@@ -62,11 +62,14 @@ unique_name_in_owner = true
 
 [node name="dotTarget" type="Marker2D" parent="rotationNode" unique_id=1412965344 node_paths=PackedStringArray("dot")]
 unique_name_in_owner = true
+position = Vector2(200, 0)
 script = ExtResource("2_h78yx")
 dot = NodePath("../..")
 sensitivity = 780.0
+default_location = Vector2(200, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="rotationNode/dotTarget" unique_id=1293991029]
+z_index = 24
 scale = Vector2(5.27, 5.27)
 texture = ExtResource("3_1mrrf")
 region_enabled = true
