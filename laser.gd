@@ -24,23 +24,25 @@ func _physics_process(_delta: float):
 	target_position = Vector2(beam_length,0)
 	
 	
-	if is_colliding():
+	if is_casting and is_colliding():
 		var local_collision_point: Vector2 = to_local(get_collision_point())
 		line_2d.set_point_position(0, Vector2.ZERO)
-		line_2d.set_point_position(0, local_collision_point)
+		line_2d.set_point_position(1, local_collision_point)
 		gpu_particles_2d.position = local_collision_point
 		gpu_particles_2d.emitting = true
 		
 		var dot = get_tree().get_first_node_in_group("dot")
 		
-		if local_collision_point == dot.global_position:
+		var collider = get_collider()
+		
+		if collider.is_in_group("dot"):
 			game_over()
-		#if local_collision_point == $dots_to_collect.global_position:
-			#pass
+		if collider.is_in_group("dots"):
+			collider.queue.free()
 			
 	else:
 		line_2d.set_point_position(0, Vector2.ZERO)
-		line_2d.set_point_position(0, target_position)
+		line_2d.set_point_position(1, target_position)
 		gpu_particles_2d.emitting = false
 	
 	
@@ -65,4 +67,5 @@ func turn_laser_off():
 	gpu_particles_2d.hide()
 
 func game_over():
-	pass
+	get_tree().paused = true
+	
