@@ -27,6 +27,20 @@ func _input(event: InputEvent) -> void:
 			var tween = newColl.create_tween()
 			tween.tween_property(newColl, "global_position", dot.dot_marker.global_position, 0.3).set_trans(Tween.TRANS_LINEAR)
 			
+			var last_dropped = SoundPlayer.time_last_drop
+			var time = Time.get_ticks_msec()
+			var pitch = SoundPlayer.pitch_drop
+			
+			print(time - last_dropped)
+			
+			if time - last_dropped < 500:
+				SoundPlayer.pitch_drop = pitch + 0.2
+			else:
+				SoundPlayer.pitch_drop = 1
+			
+			SoundPlayer.time_last_drop = time
+			SoundPlayer.drop.play()
+			
 			call_deferred("_bye")
 			
 
@@ -65,7 +79,6 @@ func _physics_process(delta: float) -> void:
 	
 			
 		_dot_animation()
-		
 		move_and_slide()
 		
 func _get_target_position(dots, dot):

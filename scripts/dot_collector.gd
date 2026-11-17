@@ -19,6 +19,7 @@ func _ready() -> void:
 				var new: Node2D = dot_scene.instantiate()
 				var plr = get_tree().get_first_node_in_group("dot")
 				new.global_position = area.global_position
+				SoundPlayer.pick_up.play()
 				call_deferred("_deffered", plr, new)
 				
 				await get_tree().process_frame

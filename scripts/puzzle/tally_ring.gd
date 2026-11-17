@@ -35,6 +35,10 @@ func _passed(_body):
 	
 	if Time.get_ticks_msec() - lastPass < time_between_tally * 1000 or dots_passed == 0:
 		dots_passed += 1
+		
+		SoundPlayer.pitch_tone = dots_passed * 0.4
+		SoundPlayer.tone.play()
+		
 		if dots_passed >= required_dots:
 			complete()
 	

@@ -27,7 +27,7 @@ zoom = Vector2(0.395, 0.395)
 position = Vector2(-945, 172)
 
 [node name="Exit" parent="." unique_id=697679489 instance=ExtResource("3_u5kpk")]
-position = Vector2(1065, 226)
+position = Vector2(1065, 197)
 next_level_scene = ExtResource("4_v45sh")
 
 [node name="Wasd" type="Sprite2D" parent="." unique_id=158665460]

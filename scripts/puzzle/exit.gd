@@ -14,5 +14,5 @@ func _on_body_entered(_body = null):
 
 func _next_level():
 	var new_level = next_level_scene.instantiate()
-
+	SoundPlayer.victory()
 	get_tree().change_scene_to_node(new_level)

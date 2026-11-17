@@ -11,6 +11,8 @@ var dots_on_plate: int = 0
 @onready var area_2d: Area2D = $Area2D
 @onready var label:	Label = $Label
 
+var manual_flag = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area_2d.body_entered.connect(_scan_bodies)
@@ -21,13 +23,16 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		_manual_scan()
 		
+		
 		if dots_on_plate >= required_dots:
 			complete()
 		else:
 			incomplete()
 
 func _manual_scan():
+	manual_flag = true
 	_on_area()
+	manual_flag = false
 
 func _on_area(_object = null):
 	_scan_bodies()
@@ -50,6 +55,12 @@ func _scan_bodies(_object = null) -> void:
 		incomplete()
 	
 	_process_text()
+	
+	if not manual_flag:
+		SoundPlayer.pitch_tone = dots_on_plate * 0.3
+		SoundPlayer.tone.play()
+		
+
 
 func _process_text():
 	if not label:

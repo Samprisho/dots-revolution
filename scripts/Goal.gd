@@ -39,8 +39,13 @@ func _ready() -> void:
 ## Is called when any [GoalCondition]s in [member conditions] fire
 ## [signal GoalCondition.condition_changed]
 func _on_conditions_changed(state: bool, condition: GoalCondition):
-	fulfilled = _evaluate_conditions()
+	var new_fulfilled = _evaluate_conditions()
 	individual_condition_change.emit(state, condition)
+	
+	if new_fulfilled == fulfilled:
+		return
+	
+	fulfilled = new_fulfilled
 	
 	if fulfilled:
 		prop_activate.emit()
