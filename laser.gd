@@ -38,7 +38,7 @@ func _physics_process(_delta: float):
 		if collider.is_in_group("dot"):
 			game_over()
 		if collider.is_in_group("dots"):
-			collider.queue.free()
+			game_over()
 			
 	else:
 		line_2d.set_point_position(0, Vector2.ZERO)
@@ -67,5 +67,7 @@ func turn_laser_off():
 	gpu_particles_2d.hide()
 
 func game_over():
-	get_tree().paused = true
+	SoundPlayer.game_over()
+	
+	get_tree().reload_current_scene()
 	
