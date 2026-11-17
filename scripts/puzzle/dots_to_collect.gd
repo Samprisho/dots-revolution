@@ -45,7 +45,10 @@ func _input(event: InputEvent) -> void:
 			
 
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	
+	#await get_tree().process_frame
+	
 	if stay:
 		return
 	

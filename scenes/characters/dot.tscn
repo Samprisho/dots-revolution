@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://ctnvxpiql1c40"]
 
-[ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_o7bw8"]
-[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_syhbm"]
-[ext_resource type="Script" uid="uid://8ce7xqkcb8cl" path="res://scripts/dot_target.gd" id="2_h78yx"]
-[ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="2_o7bw8"]
-[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="3_1mrrf"]
-[ext_resource type="Script" uid="uid://d2f7lcvvqy1nv" path="res://scripts/dot_collector.gd" id="4_ippvd"]
+[ext_resource type="Script" uid="uid://bnsc7l5t60222" path="res://scripts/player_controller.gd" id="1_8k8jw"]
+[ext_resource type="Script" uid="uid://8ce7xqkcb8cl" path="res://scripts/dot_target.gd" id="2_r4kew"]
+[ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="3_go4dd"]
+[ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="4_pvxu0"]
+[ext_resource type="Texture2D" uid="uid://c1wydb8s4rfbw" path="res://assets/sprites/spritesheet_double.png" id="5_bxn4i"]
+[ext_resource type="Script" uid="uid://d2f7lcvvqy1nv" path="res://scripts/dot_collector.gd" id="6_5af1p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 91.13726
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
-atlas = ExtResource("1_syhbm")
+atlas = ExtResource("4_pvxu0")
 region = Rect2(1, 148, 77, 78)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6g1ex"]
@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
-atlas = ExtResource("2_o7bw8")
+atlas = ExtResource("5_bxn4i")
 region = Rect2(121, 1093, 93, 49)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lg1c5"]
@@ -48,7 +48,7 @@ z_index = 1
 collision_layer = 2
 motion_mode = 1
 platform_wall_layers = 1
-script = ExtResource("1_o7bw8")
+script = ExtResource("1_8k8jw")
 speed = 700.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103549076]
@@ -63,7 +63,7 @@ unique_name_in_owner = true
 [node name="dotTarget" type="Marker2D" parent="rotationNode" unique_id=1412965344 node_paths=PackedStringArray("dot")]
 unique_name_in_owner = true
 position = Vector2(200, 0)
-script = ExtResource("2_h78yx")
+script = ExtResource("2_r4kew")
 dot = NodePath("../..")
 sensitivity = 780.0
 default_location = Vector2(200, 0)
@@ -71,7 +71,7 @@ default_location = Vector2(200, 0)
 [node name="Sprite2D" type="Sprite2D" parent="rotationNode/dotTarget" unique_id=1293991029]
 z_index = 24
 scale = Vector2(5.27, 5.27)
-texture = ExtResource("3_1mrrf")
+texture = ExtResource("3_go4dd")
 region_enabled = true
 region_rect = Rect2(0, 85, 16, 16)
 
@@ -87,7 +87,7 @@ sprite_frames = SubResource("SpriteFrames_lg1c5")
 [node name="DotCollector" type="Area2D" parent="." unique_id=1317128543]
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("4_ippvd")
+script = ExtResource("6_5af1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DotCollector" unique_id=1470720572]
 position = Vector2(2, 0)

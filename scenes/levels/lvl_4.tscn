@@ -34,7 +34,6 @@ target_position = Vector2(2000, 0)
 position = Vector2(-424, 240)
 rotation = 1.5707964
 target_position = Vector2(2000, 0)
-is_casting = true
 
 [node name="RayCast2D3" parent="." unique_id=761038654 instance=ExtResource("3_5pk66")]
 position = Vector2(-280, -152)
