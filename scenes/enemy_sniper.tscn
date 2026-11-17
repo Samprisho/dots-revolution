@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wlaepoqa65af"]
 
-[ext_resource type="Script" uid="uid://c282k8u5nkkmv" path="res://enemy_sniper.gd" id="1_ji16v"]
+[ext_resource type="Script" uid="uid://c282k8u5nkkmv" path="res://scripts/enemy_sniper.gd" id="1_ji16v"]
 [ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="2_3f205"]
 
 [node name="Enemy_Sniper" type="Node2D" unique_id=1800411160]

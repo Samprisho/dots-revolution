@@ -1,6 +1,6 @@
 extends Area2D
 
-var dot_scene = preload("res://dots_to_collect.tscn")
+var dot_scene = preload("res://scenes/characters/dots_to_collect.tscn")
 
 func _deffered(plr, new):
 	plr.find_child("dotContainer").add_child(new)

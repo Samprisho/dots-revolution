@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dots Revolution"
-run/main_scene="uid://bm8chq73mvkx4"
+run/main_scene="uid://7x5foyx5nsbs"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
@@ -28,8 +28,8 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "red",
-"res://scenes/": "orange",
-"res://scripts/": "yellow"
+"res://scenes/": "green",
+"res://scripts/": "blue"
 }
 
 [global_group]

@@ -1,4 +1,6 @@
+@tool
 extends RayCast2D
+
 
 @export var beam_length: float = 2000.0
 @export var beam_color: Color = Color.RED
@@ -35,6 +37,9 @@ func _physics_process(_delta: float):
 		
 		var collider = get_collider()
 		
+		if Engine.is_editor_hint():
+			return
+			
 		if collider.is_in_group("dot"):
 			game_over()
 		if collider.is_in_group("dots"):

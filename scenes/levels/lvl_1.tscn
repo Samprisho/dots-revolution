@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://7x5foyx5nsbs"]
 
 [ext_resource type="TileSet" uid="uid://bn1memi6fghp1" path="res://assets/tilesets/default.tres" id="1_satx0"]
-[ext_resource type="PackedScene" uid="uid://ctnvxpiql1c40" path="res://dot.tscn" id="2_0t8x2"]
+[ext_resource type="PackedScene" uid="uid://ctnvxpiql1c40" path="res://scenes/characters/dot.tscn" id="2_0t8x2"]
 [ext_resource type="PackedScene" uid="uid://d3ie4p5ep3bda" path="res://scenes/puzzle/exit.tscn" id="3_u5kpk"]
 [ext_resource type="Texture2D" uid="uid://s870pxc5m4m3" path="res://assets/sprites/wasd.svg" id="4_piajy"]
 [ext_resource type="PackedScene" uid="uid://cjxa2xit17e88" path="res://scenes/levels/lvl_2.tscn" id="4_v45sh"]

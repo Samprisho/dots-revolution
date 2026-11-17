@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6dasfaqkqt7"]
 
-[ext_resource type="Script" uid="uid://dkchpjfrg7i26" path="res://dots_to_collect.gd" id="1_ls3at"]
+[ext_resource type="Script" uid="uid://dkchpjfrg7i26" path="res://scripts/puzzle/dots_to_collect.gd" id="1_ls3at"]
 [ext_resource type="Texture2D" uid="uid://dcww4y6adnsds" path="res://assets/sprites/spritesheet_default.png" id="1_xdf3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7onm5"]

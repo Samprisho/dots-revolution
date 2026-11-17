@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://brrv3ecgedhoi"]
 
 [ext_resource type="TileSet" uid="uid://bn1memi6fghp1" path="res://assets/tilesets/default.tres" id="1_ycf2m"]
-[ext_resource type="PackedScene" uid="uid://ctnvxpiql1c40" path="res://dot.tscn" id="2_vwfr0"]
+[ext_resource type="PackedScene" uid="uid://ctnvxpiql1c40" path="res://scenes/characters/dot.tscn" id="2_vwfr0"]
 [ext_resource type="PackedScene" uid="uid://d3ie4p5ep3bda" path="res://scenes/puzzle/exit.tscn" id="3_wt5s4"]
 [ext_resource type="PackedScene" uid="uid://ce348jgr3jxkj" path="res://scenes/puzzle/gate.tscn" id="4_ufxc7"]
+[ext_resource type="PackedScene" uid="uid://ca8lh0rnbjukc" path="res://scenes/levels/lvl_4.tscn" id="4_vwfr0"]
 [ext_resource type="PackedScene" uid="uid://dyn4xcuy0bi7x" path="res://scenes/characters/collectible_dot.tscn" id="5_6dgo0"]
 [ext_resource type="PackedScene" uid="uid://bt4q22ra05uiy" path="res://scenes/puzzle/pressure_plate.tscn" id="6_sh3yb"]
 
@@ -38,6 +39,7 @@ position = Vector2(-1034, -516)
 
 [node name="Exit" parent="." unique_id=697679489 instance=ExtResource("3_wt5s4")]
 position = Vector2(850, 396)
+next_level_scene = ExtResource("4_vwfr0")
 
 [node name="Collectible dot" parent="." unique_id=1009933491 instance=ExtResource("5_6dgo0")]
 position = Vector2(-811, 370)

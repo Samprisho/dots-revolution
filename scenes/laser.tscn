@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgxec1bd3ugpu"]
 
-[ext_resource type="Script" uid="uid://ds2bmiu5ca671" path="res://laser.gd" id="1_6vqwg"]
+[ext_resource type="Script" uid="uid://ds2bmiu5ca671" path="res://scripts/puzzle/laser.gd" id="1_6vqwg"]
 [ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="1_fn5yt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v4xrj"]

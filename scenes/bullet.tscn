@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf2apqs8iyvli"]
 
 [ext_resource type="Texture2D" uid="uid://bqnbgfbidw12c" path="res://assets/sprites/tilemap.png" id="1_v7oki"]
-[ext_resource type="Script" uid="uid://dp2u8fc4yl8r0" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Script" uid="uid://dp2u8fc4yl8r0" path="res://scripts/bullet.gd" id="1_v8qja"]
 
 [node name="Bullet" type="Node2D" unique_id=1115988382]
 script = ExtResource("1_v8qja")
